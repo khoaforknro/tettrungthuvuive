@@ -1,1 +1,1723 @@
+<!DOCTYPE html>
+<html lang="vi">
 
+<head>
+
+<meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600&display=swap"
+    rel="stylesheet"
+>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Administrator</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        "Be Vietnam Pro",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #172f52 0%,
+            #0b1b31 42%,
+            #050b15 100%
+        );
+
+    color: #f7edcf;
+}
+
+
+/* =========================
+   
+========================= */
+
+.container {
+
+    width: min(
+        1100px,
+        92vw
+    );
+
+    margin: 0 auto;
+
+    padding:
+        45px 0
+        60px;
+}
+
+
+/* =========================
+   
+========================= */
+
+.login-screen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.login-box {
+
+    width: min(
+        430px,
+        92vw
+    );
+
+    padding: 38px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(247,237,207,.97),
+            rgba(234,215,170,.97)
+        );
+
+    color: #4b392d;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,.5);
+
+    text-align: center;
+}
+
+.login-box h1 {
+
+    font-family: Noto Serif, serif;
+
+    font-weight: 400;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.login-box .subtitle {
+
+    font-size: 14px;
+
+    color: #765e4e;
+
+    margin-bottom: 28px;
+}
+
+.input-group {
+
+    text-align: left;
+
+    margin-bottom: 15px;
+}
+
+.input-group label {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+
+    color: #765e4e;
+}
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(118,82,67,.3);
+
+    background:
+        rgba(255,255,255,.55);
+
+    color: #49372c;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.input-group input:focus {
+
+    border-color:
+        rgba(118,82,67,.7);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(118,82,67,.08);
+}
+
+.login-btn {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 28px;
+
+    background: #765243;
+
+    color: #fff8e8;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.login-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    background: #8b6250;
+}
+
+.login-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.login-error {
+
+    display: none;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: #a33a3a;
+
+    line-height: 1.5;
+}
+
+.login-error.show {
+
+    display: block;
+}
+
+
+/* =========================
+   
+========================= */
+
+.admin-screen {
+
+    display: none;
+}
+
+.admin-screen.show {
+
+    display: block;
+}
+
+
+/* =========================
+   
+========================= */
+
+.header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    flex-wrap: wrap;
+}
+
+.header-left h1 {
+
+    font-family: Noto Serif, serif;
+
+    font-weight: 400;
+
+    font-size: 31px;
+
+    margin-bottom: 5px;
+}
+
+.header-left p {
+
+    color:
+        rgba(247,237,207,.65);
+
+    font-size: 14px;
+}
+
+.header-actions {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.header-btn {
+
+    border: 1px solid
+        rgba(247,237,207,.2);
+
+    background:
+        rgba(255,255,255,.06);
+
+    color: #f7edcf;
+
+    padding: 10px 16px;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.header-btn:hover {
+
+    background:
+        rgba(255,255,255,.12);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================
+   
+========================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.stat-card {
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.18);
+}
+
+.stat-label {
+
+    color:
+        rgba(247,237,207,.58);
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.stat-value {
+
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+.stat-sub {
+
+    margin-top: 6px;
+
+    color:
+        rgba(247,237,207,.55);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   
+========================= */
+
+.card {
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.18);
+}
+
+.card-title {
+
+    font-family: Noto Serif, serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   
+========================= */
+
+.read-status {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.status-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.status-dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #777;
+
+    box-shadow:
+        0 0 12px
+        rgba(255,255,255,.15);
+}
+
+.status-dot.read {
+
+    background: #85d38a;
+
+    box-shadow:
+        0 0 14px
+        rgba(133,211,138,.4);
+}
+
+.status-text {
+
+    font-size: 15px;
+}
+
+.status-time {
+
+    color:
+        rgba(247,237,207,.55);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MESSAGE LIST
+========================= */
+
+.messages {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.message-item {
+
+    padding: 18px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius: 13px;
+}
+
+.message-meta {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 12px;
+}
+
+.message-label {
+
+    font-size: 12px;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(216,195,155,.12);
+
+    color: #d8c39b;
+}
+
+.message-time {
+
+    font-size: 12px;
+
+    color:
+        rgba(247,237,207,.5);
+}
+
+.message-content {
+
+    color: #f7edcf;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+}
+
+.message-id {
+
+    margin-top: 12px;
+
+    font-size: 11px;
+
+    color:
+        rgba(247,237,207,.3);
+}
+
+.empty {
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color:
+        rgba(247,237,207,.5);
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+
+    text-align: center;
+
+    padding: 30px;
+
+    color:
+        rgba(247,237,207,.55);
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.admin-error {
+
+    display: none;
+
+    margin-bottom: 20px;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(190,70,70,.12);
+
+    border:
+        1px solid
+        rgba(190,70,70,.25);
+
+    color: #f0aaa0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.admin-error.show {
+
+    display: block;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    color:
+        rgba(247,237,207,.3);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .container {
+
+        width: 92vw;
+
+        padding-top: 30px;
+    }
+
+    .stats {
+
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+
+        align-items: flex-start;
+    }
+
+    .header-left h1 {
+
+        font-size: 27px;
+    }
+
+    .card {
+
+        padding: 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<div
+    class="login-screen"
+    id="loginScreen"
+>
+
+    <div class="login-box">
+
+        <h1>
+            Lá thư 🌙
+        </h1>
+
+        <div class="subtitle">
+            Khu vực dành riêng cho anh
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email admin"
+                autocomplete="email"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="password">
+                Mật khẩu
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Mật khẩu"
+                autocomplete="current-password"
+            >
+
+        </div>
+
+
+        <button
+            class="login-btn"
+            id="loginBtn"
+        >
+            Đăng nhập ✦
+        </button>
+
+
+        <div
+            class="login-error"
+            id="loginError"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<div
+    class="admin-screen"
+    id="adminScreen"
+>
+
+    <div class="container">
+
+
+        <!--  -->
+
+        <div class="header">
+
+            <div class="header-left">
+
+                <h1>
+                    Nhật ký lá thư 🌙
+                </h1>
+
+                <p>
+                    Những gì được gửi lại sau khi em đọc thư.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="header-btn"
+                    id="refreshBtn"
+                >
+                    ↻ Làm mới
+                </button>
+
+                <button
+                    class="header-btn"
+                    id="logoutBtn"
+                >
+                    Đăng xuất
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!--  -->
+
+        <div
+            class="admin-error"
+            id="adminError"
+        ></div>
+
+
+        <!--  -->
+
+        <div class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-label">
+                    Trạng thái thư
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="readStat"
+                >
+                    Chưa đọc
+                </div>
+
+                <div
+                    class="stat-sub"
+                    id="readStatSub"
+                >
+                    Chưa có xác nhận
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-label">
+                    Tin nhắn ẩn danh
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="messageCount"
+                >
+                    0
+                </div>
+
+                <div class="stat-sub">
+                    Tổng số lời nhắn
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-label">
+                    Tin nhắn mới nhất
+                </div>
+
+                <div
+                    class="stat-value"
+                    id="latestMessage"
+                >
+                    —
+                </div>
+
+                <div
+                    class="stat-sub"
+                    id="latestMessageSub"
+                >
+                    Chưa có tin nhắn
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!--  -->
+
+        <div class="card">
+
+            <div class="card-title">
+                Trạng thái đọc thư
+            </div>
+
+
+            <div class="read-status">
+
+                <div class="status-left">
+
+                    <div
+                        class="status-dot"
+                        id="statusDot"
+                    ></div>
+
+                    <div>
+
+                        <div
+                            class="status-text"
+                            id="statusText"
+                        >
+                            Chưa xác nhận đọc
+                        </div>
+
+                        <div
+                            class="status-time"
+                            id="statusTime"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--  -->
+
+        <div class="card">
+
+            <div class="card-title">
+                Tin nhắn ẩn danh
+            </div>
+
+
+            <div
+                class="messages"
+                id="messages"
+            >
+
+                <div class="loading">
+                    Đang tải...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            🌙 Private Admin — Một lá thư dành cho em
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<script type="module">
+
+import {
+    initializeApp
+} from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    orderBy,
+    doc,
+    getDoc
+} from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+/* =====================================================
+   
+===================================================== */
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBodQal8TC-NzlOmFzItWDqluG9HViLmRQ",
+    authDomain: "my-love-edhtrang.firebaseapp.com",
+    projectId: "my-love-edhtrang",
+    storageBucket: "my-love-edhtrang.firebasestorage.app",
+    messagingSenderId: "769468578791",
+    appId: "1:769468578791:web:4269ea951dbb0f5510db42",
+    measurementId: "G-VBE41E5LSH"
+};
+
+/* =====================================================
+   
+=====================================================
+
+   
+===================================================== */
+
+const ADMIN_UID =
+    "QqulFyZr6PW9tahvBwBXiKu3WC03";
+
+
+/* =====================================================
+   
+===================================================== */
+
+const app =
+    initializeApp(firebaseConfig);
+
+const auth =
+    getAuth(app);
+
+const db =
+    getFirestore(app);
+
+
+/* =====================================================
+  
+===================================================== */
+
+const loginScreen =
+    document.getElementById(
+        "loginScreen"
+    );
+
+const adminScreen =
+    document.getElementById(
+        "adminScreen"
+    );
+
+const emailInput =
+    document.getElementById(
+        "email"
+    );
+
+const passwordInput =
+    document.getElementById(
+        "password"
+    );
+
+const loginBtn =
+    document.getElementById(
+        "loginBtn"
+    );
+
+const loginError =
+    document.getElementById(
+        "loginError"
+    );
+
+const logoutBtn =
+    document.getElementById(
+        "logoutBtn"
+    );
+
+const refreshBtn =
+    document.getElementById(
+        "refreshBtn"
+    );
+
+const adminError =
+    document.getElementById(
+        "adminError"
+    );
+
+const readStat =
+    document.getElementById(
+        "readStat"
+    );
+
+const readStatSub =
+    document.getElementById(
+        "readStatSub"
+    );
+
+const messageCount =
+    document.getElementById(
+        "messageCount"
+    );
+
+const latestMessage =
+    document.getElementById(
+        "latestMessage"
+    );
+
+const latestMessageSub =
+    document.getElementById(
+        "latestMessageSub"
+    );
+
+const statusDot =
+    document.getElementById(
+        "statusDot"
+    );
+
+const statusText =
+    document.getElementById(
+        "statusText"
+    );
+
+const statusTime =
+    document.getElementById(
+        "statusTime"
+    );
+
+const messages =
+    document.getElementById(
+        "messages"
+    );
+
+
+/* =====================================================
+   
+===================================================== */
+
+function formatTime(timestamp) {
+
+    if (!timestamp) {
+
+        return "Chưa có";
+
+    }
+
+    const date =
+        timestamp.toDate();
+
+    return date.toLocaleString(
+        "vi-VN",
+        {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        }
+    );
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+function showAdminError(message) {
+
+    adminError.textContent =
+        message;
+
+    adminError.classList.add(
+        "show"
+    );
+
+}
+
+
+function clearAdminError() {
+
+    adminError.textContent =
+        "";
+
+    adminError.classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+loginBtn.addEventListener(
+    "click",
+    async function() {
+
+        const email =
+            emailInput.value.trim();
+
+        const password =
+            passwordInput.value;
+
+
+        if (!email || !password) {
+
+            loginError.textContent =
+                "Nhập email và mật khẩu trước nhé.";
+
+            loginError.classList.add(
+                "show"
+            );
+
+            return;
+
+        }
+
+
+        loginBtn.disabled =
+            true;
+
+        loginBtn.textContent =
+            "Đang đăng nhập...";
+
+        loginError.classList.remove(
+            "show"
+        );
+
+
+        try {
+
+            const result =
+                await signInWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+
+
+            /* =========================
+               
+            ========================= */
+
+            if (
+                result.user.uid !==
+                ADMIN_UID
+            ) {
+
+                await signOut(auth);
+
+                throw new Error(
+                    "Tài khoản này không có quyền truy cập trang admin."
+                );
+
+            }
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            loginError.textContent =
+                "Đăng nhập thất bại. Kiểm tra email, mật khẩu hoặc ADMIN_UID.";
+
+            loginError.classList.add(
+                "show"
+            );
+
+        }
+
+
+        loginBtn.disabled =
+            false;
+
+        loginBtn.textContent =
+            "Đăng nhập ✦";
+
+    }
+);
+
+
+/* =====================================================
+  
+===================================================== */
+
+passwordInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            loginBtn.click();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+onAuthStateChanged(
+    auth,
+    async function(user) {
+
+        if (!user) {
+
+            loginScreen.style.display =
+                "flex";
+
+            adminScreen.classList.remove(
+                "show"
+            );
+
+            return;
+
+        }
+
+
+        /* =========================
+           
+        ========================= */
+
+        if (
+            user.uid !==
+            ADMIN_UID
+        ) {
+
+            await signOut(auth);
+
+            return;
+
+        }
+
+
+        loginScreen.style.display =
+            "none";
+
+        adminScreen.classList.add(
+            "show"
+        );
+
+
+        await loadDashboard();
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+async function loadDashboard() {
+
+    clearAdminError();
+
+    try {
+
+        await Promise.all([
+            loadReadStatus(),
+            loadMessages()
+        ]);
+
+    } catch (error) {
+
+        console.error(error);
+
+        showAdminError(
+            "Không thể tải dữ liệu Firebase. Kiểm tra Rules và Firebase Config."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+async function loadReadStatus() {
+
+    const statusRef =
+        doc(
+            db,
+            "letter_status",
+            "main"
+        );
+
+
+    const snapshot =
+        await getDoc(
+            statusRef
+        );
+
+
+    if (!snapshot.exists()) {
+
+        readStat.textContent =
+            "Chưa đọc";
+
+        readStatSub.textContent =
+            "Chưa có xác nhận";
+
+        statusDot.classList.remove(
+            "read"
+        );
+
+        statusText.textContent =
+            "Chưa xác nhận đọc";
+
+        statusTime.textContent =
+            "Chưa có thời gian";
+
+
+        return;
+
+    }
+
+
+    const data =
+        snapshot.data();
+
+
+    if (
+        data.readConfirmed
+    ) {
+
+        readStat.textContent =
+            "Đã đọc";
+
+        readStatSub.textContent =
+            formatTime(
+                data.readAt
+            );
+
+        statusDot.classList.add(
+            "read"
+        );
+
+        statusText.textContent =
+            "Đã xác nhận đọc thư";
+
+        statusTime.textContent =
+            "Thời gian: " +
+            formatTime(
+                data.readAt
+            );
+
+    } else {
+
+        readStat.textContent =
+            "Chưa đọc";
+
+        readStatSub.textContent =
+            "Chưa có xác nhận";
+
+        statusDot.classList.remove(
+            "read"
+        );
+
+        statusText.textContent =
+            "Chưa xác nhận đọc";
+
+        statusTime.textContent =
+            "Chưa có thời gian";
+
+    }
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+async function loadMessages() {
+
+    messages.innerHTML = `
+        <div class="loading">
+            Đang tải tin nhắn...
+        </div>
+    `;
+
+
+    const messagesQuery =
+        query(
+            collection(
+                db,
+                "anonymous_messages"
+            ),
+            orderBy(
+                "sentAt",
+                "desc"
+            )
+        );
+
+
+    const snapshot =
+        await getDocs(
+            messagesQuery
+        );
+
+
+    const docs =
+        snapshot.docs;
+
+
+    messageCount.textContent =
+        docs.length;
+
+
+    if (
+        docs.length === 0
+    ) {
+
+        messages.innerHTML = `
+            <div class="empty">
+                Chưa có tin nhắn ẩn danh nào. 
+            </div>
+        `;
+
+        latestMessage.textContent =
+            "—";
+
+        latestMessageSub.textContent =
+            "Chưa có tin nhắn";
+
+        return;
+
+    }
+
+
+    latestMessage.textContent =
+        "Có";
+
+    latestMessageSub.textContent =
+        formatTime(
+            docs[0].data().sentAt
+        );
+
+
+    messages.innerHTML =
+        "";
+
+
+    docs.forEach(
+        docSnapshot => {
+
+            const data =
+                docSnapshot.data();
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+            item.className =
+                "message-item";
+
+
+            const meta =
+                document.createElement(
+                    "div"
+                );
+
+            meta.className =
+                "message-meta";
+
+
+            const label =
+                document.createElement(
+                    "div"
+                );
+
+            label.className =
+                "message-label";
+
+            label.textContent =
+                "Tin nhắn ẩn danh";
+
+
+            const time =
+                document.createElement(
+                    "div"
+                );
+
+            time.className =
+                "message-time";
+
+            time.textContent =
+                formatTime(
+                    data.sentAt
+                );
+
+
+            meta.appendChild(
+                label
+            );
+
+            meta.appendChild(
+                time
+            );
+
+
+            const content =
+                document.createElement(
+                    "div"
+                );
+
+            content.className =
+                "message-content";
+
+            content.textContent =
+                data.message ||
+                "(Tin nhắn trống)";
+
+
+            const id =
+                document.createElement(
+                    "div"
+                );
+
+            id.className =
+                "message-id";
+
+            id.textContent =
+                "ID: " +
+                docSnapshot.id;
+
+
+            item.appendChild(
+                meta
+            );
+
+            item.appendChild(
+                content
+            );
+
+            item.appendChild(
+                id
+            );
+
+
+            messages.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+refreshBtn.addEventListener(
+    "click",
+    async function() {
+
+        refreshBtn.disabled =
+            true;
+
+        refreshBtn.textContent =
+            "↻ Đang tải...";
+
+
+        try {
+
+            await loadDashboard();
+
+        } finally {
+
+            refreshBtn.disabled =
+                false;
+
+            refreshBtn.textContent =
+                "↻ Làm mới";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+logoutBtn.addEventListener(
+    "click",
+    async function() {
+
+        await signOut(auth);
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
