@@ -1,1 +1,3213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
 
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Happy Mid Autumn Festival to you</title>
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =====================================================
+   
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   
+===================================================== */
+body {
+
+    overflow: hidden;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    background: #07111f;
+
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =====================================================
+   Sì Kai
+===================================================== */
+
+.scene {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #172f52 0%,
+            #0b1b31 38%,
+            #050b15 100%
+        );
+}
+
+
+/* =====================================================
+   Sì ta
+===================================================== */
+
+.stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.star {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: .7;
+
+    animation:
+        twinkle 3s
+        infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+    0%, 100% {
+
+        opacity: .2;
+
+        transform:
+            scale(.7);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.4);
+    }
+}
+
+
+/* =====================================================
+   Mun
+===================================================== */
+
+.moon {
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    right: 14%;
+    top: 10%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fffef0 0%,
+            #f7f3ce 65%,
+            #ddd69e 100%
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(255,245,180,.45),
+
+        0 0 90px
+        rgba(255,245,180,.18);
+}
+
+.moon::before,
+.moon::after {
+
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(160,150,110,.12);
+}
+
+.moon::before {
+
+    width: 25px;
+    height: 25px;
+
+    left: 40px;
+    top: 45px;
+}
+
+.moon::after {
+
+    width: 18px;
+    height: 18px;
+
+    right: 35px;
+    bottom: 38px;
+}
+
+
+/* =====================================================
+   Cờ Lao
+===================================================== */
+
+.cloud {
+
+    position: absolute;
+
+    width: 220px;
+    height: 55px;
+
+    background:
+        rgba(150,175,205,.08);
+
+    border-radius: 100px;
+
+    filter: blur(2px);
+
+    animation:
+        cloudMove 35s
+        linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+
+    content: "";
+
+    position: absolute;
+
+    background: inherit;
+
+    border-radius: 50%;
+}
+
+.cloud::before {
+
+    width: 90px;
+    height: 90px;
+
+    left: 35px;
+    bottom: 0;
+}
+
+.cloud::after {
+
+    width: 120px;
+    height: 120px;
+
+    right: 25px;
+    bottom: 0;
+}
+
+.cloud1 {
+
+    top: 25%;
+    left: -250px;
+}
+
+.cloud2 {
+
+    top: 42%;
+    left: -400px;
+
+    transform: scale(.7);
+
+    animation-delay: -15s;
+}
+
+@keyframes cloudMove {
+
+    from {
+
+        transform:
+            translateX(0);
+    }
+
+    to {
+
+        transform:
+            translateX(
+                calc(100vw + 700px)
+            );
+    }
+}
+
+
+/* =====================================================
+   Đờ Hiu
+===================================================== */
+
+.hill {
+
+    position: absolute;
+
+    bottom: -100px;
+
+    width: 120%;
+    height: 260px;
+
+    border-radius:
+        50% 50% 0 0;
+
+    background: #07101b;
+}
+
+.hill1 {
+
+    left: -10%;
+
+    z-index: 3;
+}
+
+.hill2 {
+
+    bottom: -145px;
+
+    left: 35%;
+
+    background: #050b13;
+
+    z-index: 4;
+}
+
+
+/* =====================================================
+   Fai phờ lai
+===================================================== */
+
+.firefly {
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #ffeaa0;
+
+    box-shadow:
+        0 0 12px
+        #ffeaa0;
+
+    animation:
+        fly 5s
+        infinite ease-in-out;
+}
+
+@keyframes fly {
+
+    0%, 100% {
+
+        transform:
+            translate(0,0);
+
+        opacity: .2;
+    }
+
+    50% {
+
+        transform:
+            translate(25px,-40px);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   Đờ Gíp
+===================================================== */
+
+.gift-area {
+
+    position: absolute;
+
+    left: 50%;
+    top: 58%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index: 10;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   Gisp Bóc
+===================================================== */
+
+.gift {
+
+    position: relative;
+
+    width: 230px;
+    height: 190px;
+
+    cursor: pointer;
+
+    transition:
+        transform .5s ease;
+}
+
+.gift:hover {
+
+    transform:
+        scale(1.025);
+}
+
+.gift-inside {
+
+    position: absolute;
+
+    left: 12px;
+    top: 18px;
+
+    width: 206px;
+    height: 85px;
+
+    background: #230d16;
+
+    border-radius: 5px;
+
+    z-index: 3;
+}
+
+.gift-box {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 230px;
+    height: 145px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a43b45 0%,
+            #c94c57 45%,
+            #a83b46 100%
+        );
+
+    box-shadow:
+        0 20px 35px
+        rgba(0,0,0,.45);
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+.gift-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 96px;
+    top: 0;
+
+    width: 38px;
+    height: 100%;
+
+    background: #e8b75a;
+}
+
+.gift-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 45px;
+
+    width: 100%;
+    height: 32px;
+
+    background: #e8b75a;
+}
+
+
+/* =====================================================
+   Đờ lét tơ
+===================================================== */
+
+.letter-inside {
+
+    position: absolute;
+
+    left: 27px;
+    top: 23px;
+
+    width: 176px;
+    height: 82px;
+
+    background: #f4e6c4;
+
+    color: #49372c;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,.35);
+
+    z-index: 4;
+
+    transform:
+        translateY(50px)
+        rotate(-1deg);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform .6s
+        cubic-bezier(.22,.61,.36,1),
+
+        opacity .6s ease;
+
+    cursor: pointer;
+}
+
+.letter-inside::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 49%,
+            rgba(120,80,50,.13) 50%,
+            transparent 51%
+        );
+
+    opacity: .5;
+}
+
+.letter-inside span {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 30px;
+
+    text-align: center;
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    color: #6d5040;
+}
+
+
+/* =====================================================
+   box box
+===================================================== */
+
+.gift-lid {
+
+    position: absolute;
+
+    left: -5px;
+    top: 0;
+
+    width: 240px;
+    height: 55px;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b9414d,
+            #d95360,
+            #b43d49
+        );
+
+    box-shadow:
+        0 8px 15px
+        rgba(0,0,0,.35);
+
+    z-index: 12;
+
+    transform-origin:
+        center center;
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.22,.61,.36,1),
+
+        opacity .7s ease;
+}
+
+.gift-lid::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 100px;
+    top: 0;
+
+    width: 40px;
+    height: 100%;
+
+    background: #e8b75a;
+}
+
+
+/* =====================================================
+   Tịu
+===================================================== */
+
+.bow {
+
+    position: absolute;
+
+    top: -35px;
+    left: 88px;
+
+    width: 65px;
+    height: 55px;
+
+    z-index: 15;
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.22,.61,.36,1),
+
+        opacity .7s ease;
+}
+
+.bow::before,
+.bow::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 40px;
+    height: 35px;
+
+    background: #e8b75a;
+
+    border-radius:
+        50% 50% 50% 10%;
+}
+
+.bow::before {
+
+    left: 0;
+
+    transform:
+        rotate(25deg);
+}
+
+.bow::after {
+
+    right: 0;
+
+    transform:
+        rotate(-25deg);
+}
+
+.bow-center {
+
+    position: absolute;
+
+    left: 25px;
+    top: 13px;
+
+    width: 17px;
+    height: 25px;
+
+    border-radius: 5px;
+
+    background: #d29d42;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   Ô bần thờ bóc
+===================================================== */
+
+.gift.opened .gift-lid {
+
+    transform:
+        translateX(280px)
+        translateY(30px)
+        rotate(12deg);
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.gift.opened .bow {
+
+    transform:
+        translateX(280px)
+        translateY(30px)
+        rotate(12deg);
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.gift.opened .letter-inside {
+
+    transform:
+        translateY(-20px)
+        rotate(-1deg)
+        scale(1.03);
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.4);
+
+    transition-delay:
+        .3s;
+}
+
+
+/* =====================================================
+   Tu ri tùa
+===================================================== */
+
+.hint {
+
+    margin-top: 30px;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    color:
+        rgba(255,255,255,.75);
+
+    letter-spacing: .3px;
+
+    transition: .5s;
+}
+
+
+/* =====================================================
+   cờ lâu bút tong
+===================================================== */
+
+.close-btn {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #a3897b;
+
+    cursor: pointer;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+    line-height: 1;
+
+    z-index: 10;
+}
+
+.close-btn:hover {
+
+    color: #d9534f;
+
+    transform:
+        scale(1.1);
+}
+
+
+/* =====================================================
+   ô vờ lay lét tơ
+===================================================== */
+
+.letter-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(2,7,15,.82);
+
+    backdrop-filter:
+        blur(7px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .7s ease;
+}
+
+.letter-overlay.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =====================================================
+   bây bờ
+===================================================== */
+
+.letter-paper {
+
+    position: relative;
+
+    width:
+        min(700px,92vw);
+
+    max-height: 86vh;
+
+    overflow-y: auto;
+
+    padding:
+        55px 55px 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7edcf,
+            #efe0b8
+        );
+
+    color: #46382e;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.55);
+
+    transform:
+        translateY(35px)
+        scale(.94);
+
+    transition:
+        transform .7s ease;
+
+    /*
+     * 
+     */
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    /*
+     * 
+     * 
+     */
+    font-optical-sizing: auto;
+
+    text-rendering:
+        optimizeLegibility;
+}
+
+.letter-overlay.show
+.letter-paper {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.letter-paper h1 {
+
+    text-align: center;
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    line-height: 1.45;
+
+    margin-bottom: 35px;
+
+    color: #5c4030;
+
+    letter-spacing: -.2px;
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.letter-content p {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 2;
+
+    margin-bottom: 18px;
+
+    color: #46382e;
+
+    /*
+     * 
+     */
+    font-feature-settings:
+        "kern" 1;
+
+    opacity: 0;
+
+    transform:
+        translateY(12px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.letter-content p.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
+   xích nây trờ
+===================================================== */
+
+.signature {
+
+    margin-top: 30px;
+
+    text-align: right;
+
+    /*
+     * 
+     * 
+     */
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    font-size: 22px;
+
+    color: #5c4030;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+.signature.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.read-done {
+
+    margin-top: 35px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    pointer-events: none;
+}
+
+.read-done.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    pointer-events: auto;
+}
+
+.read-done-text {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    color: #705545;
+
+    margin-bottom: 16px;
+
+    font-size: 16px;
+}
+
+.read-button {
+
+    border: none;
+
+    padding:
+        11px 25px;
+
+    border-radius: 30px;
+
+    background: #765243;
+
+    color: #fff8e8;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.read-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        #8b6250;
+}
+
+
+/* =====================================================
+   Lựa chọn của em
+===================================================== */
+
+.choice-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(3,8,15,.55);
+
+    backdrop-filter:
+        blur(5px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .6s ease;
+}
+
+.choice-overlay.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.choice-box {
+
+    position: relative;
+
+    width:
+        min(450px,90vw);
+
+    padding:
+        35px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7edcf,
+            #ead7aa
+        );
+
+    color: #4b392d;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.5);
+
+    transform:
+        translateY(25px)
+        scale(.95);
+
+    transition: .6s ease;
+}
+
+.choice-overlay.show
+.choice-box {
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.choice-box h2 {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-weight: 500;
+
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+
+    padding-top: 5px;
+
+    color: #5c4030;
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.choice-box p {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    color: #765e4e;
+
+    margin-bottom: 25px;
+
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.choice-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.choice-buttons button {
+
+    border: none;
+
+    padding:
+        12px 20px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+.thank-btn {
+
+    background:
+        #d8c39b;
+
+    color:
+        #503d30;
+}
+
+.message-btn {
+
+    background:
+        #765243;
+
+    color:
+        #fff8e8;
+}
+
+.choice-buttons button:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.thank-you {
+
+    display: none;
+
+    margin-top: 18px;
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    color: #624a3c;
+}
+
+.thank-you.show {
+
+    display: block;
+}
+
+.thank-text {
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.anonymous-btn {
+
+    width: 100%;
+
+    border:
+        1px solid
+        rgba(118,82,67,.4);
+
+    padding:
+        11px 18px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    color: #765243;
+
+    cursor: pointer;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.anonymous-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(118,82,67,.08);
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.anonymous-form {
+
+    display: none;
+
+    margin-top: 18px;
+}
+
+.anonymous-form.show {
+
+    display: block;
+}
+
+.anonymous-title {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    color: #5c4030;
+
+    margin-bottom: 8px;
+}
+
+.anonymous-note {
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    color: #806a58;
+
+    margin-bottom: 12px;
+
+    line-height: 1.6;
+}
+
+#anonymousMessage {
+
+    width: 100%;
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    padding:
+        13px 14px;
+
+    border:
+        1px solid
+        rgba(118,82,67,.3);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.35);
+
+    color: #49372c;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    outline: none;
+
+    transition:
+        border .3s ease,
+        box-shadow .3s ease;
+}
+
+#anonymousMessage::placeholder {
+
+    color:
+        rgba(73,55,44,.5);
+}
+
+#anonymousMessage:focus {
+
+    border-color:
+        rgba(118,82,67,.65);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(118,82,67,.08);
+}
+
+.anonymous-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.anonymous-send,
+.anonymous-cancel {
+
+    border: none;
+
+    padding:
+        11px 18px;
+
+    border-radius: 24px;
+
+    cursor: pointer;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+.anonymous-send {
+
+    background:
+        #765243;
+
+    color:
+        #fff8e8;
+}
+
+.anonymous-cancel {
+
+    background:
+        #d8c39b;
+
+    color:
+        #503d30;
+}
+
+.anonymous-send:hover,
+.anonymous-cancel:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+.anonymous-status {
+
+    display: none;
+
+    margin-top: 12px;
+
+    font-family:
+        "Be Vietnam Pro",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    color: #765e4e;
+
+    line-height: 1.6;
+}
+
+.anonymous-status.show {
+
+    display: block;
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+.letter-paper::-webkit-scrollbar {
+
+    width: 7px;
+}
+
+.letter-paper::-webkit-scrollbar-track {
+
+    background:
+        rgba(118,82,67,.08);
+}
+
+.letter-paper::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(118,82,67,.28);
+
+    border-radius: 10px;
+}
+
+.letter-paper::-webkit-scrollbar-thumb:hover {
+
+    background:
+        rgba(118,82,67,.4);
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+@media(max-width:600px) {
+
+    .moon {
+
+        width: 115px;
+        height: 115px;
+
+        right: 10%;
+        top: 10%;
+    }
+
+
+    .gift {
+
+        transform:
+            scale(.82);
+    }
+
+    .gift:hover {
+
+        transform:
+            scale(.84);
+    }
+
+
+    .letter-paper {
+
+        padding:
+            35px 25px;
+
+        max-height: 88vh;
+    }
+
+
+    .letter-paper h1 {
+
+        font-size: 25px;
+
+        line-height: 1.5;
+    }
+
+
+    .letter-content p {
+
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+
+    .signature {
+
+        font-size: 20px;
+    }
+
+
+    .gift.opened .gift-lid {
+
+        transform:
+            translateX(190px)
+            translateY(25px)
+            rotate(12deg);
+    }
+
+
+    .gift.opened .bow {
+
+        transform:
+            translateX(190px)
+            translateY(25px)
+            rotate(12deg);
+    }
+
+
+    .choice-box {
+
+        padding:
+            32px 20px;
+    }
+
+
+    .choice-buttons {
+
+        flex-direction:
+            column;
+    }
+
+
+    .choice-buttons button {
+
+        width: 100%;
+    }
+
+
+    .anonymous-actions {
+
+        flex-direction:
+            column;
+    }
+
+
+    .anonymous-send,
+    .anonymous-cancel {
+
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+@media(max-height:700px) and (min-width:601px) {
+
+    .letter-paper {
+
+        max-height: 90vh;
+
+        padding:
+            40px 50px 35px;
+    }
+
+    .letter-paper h1 {
+
+        margin-bottom: 25px;
+
+        font-size: 28px;
+    }
+
+    .letter-content p {
+
+        font-size: 17px;
+
+        line-height: 1.8;
+
+        margin-bottom: 14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
+    <source
+        src="https://raw.githubusercontent.com/khoaforknro/tettrungthuvuive/main/Caydaquandoc.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<div class="scene">
+
+
+    <!-- SAO -->
+
+    <div class="stars">
+
+        <span
+            class="star"
+            style="
+                left:8%;
+                top:15%;
+                animation-delay:.2s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:18%;
+                top:30%;
+                animation-delay:1s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:28%;
+                top:12%;
+                animation-delay:1.7s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:38%;
+                top:23%;
+                animation-delay:.5s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:50%;
+                top:10%;
+                animation-delay:2s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:62%;
+                top:28%;
+                animation-delay:1.2s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:73%;
+                top:15%;
+                animation-delay:.8s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:84%;
+                top:31%;
+                animation-delay:2.3s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:92%;
+                top:12%;
+                animation-delay:1.5s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:44%;
+                top:38%;
+                animation-delay:2.5s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:12%;
+                top:48%;
+                animation-delay:1.3s
+            "
+        ></span>
+
+        <span
+            class="star"
+            style="
+                left:79%;
+                top:43%;
+                animation-delay:.4s
+            "
+        ></span>
+
+    </div>
+
+
+    <!--  -->
+
+    <div class="moon"></div>
+
+
+    <!-- MÂY -->
+
+    <div class="cloud cloud1"></div>
+
+    <div class="cloud cloud2"></div>
+
+
+    <!-- -->
+
+    <span
+        class="firefly"
+        style="
+            left:12%;
+            bottom:28%;
+            animation-delay:.3s
+        "
+    ></span>
+
+    <span
+        class="firefly"
+        style="
+            left:20%;
+            bottom:20%;
+            animation-delay:1.8s
+        "
+    ></span>
+
+    <span
+        class="firefly"
+        style="
+            left:75%;
+            bottom:25%;
+            animation-delay:.8s
+        "
+    ></span>
+
+    <span
+        class="firefly"
+        style="
+            left:85%;
+            bottom:18%;
+            animation-delay:2s
+        "
+    ></span>
+
+    <span
+        class="firefly"
+        style="
+            left:65%;
+            bottom:15%;
+            animation-delay:1.2s
+        "
+    ></span>
+
+
+    <!--  -->
+
+    <div class="hill hill1"></div>
+
+    <div class="hill hill2"></div>
+
+
+    <!-- HỘP QUÀ -->
+
+    <div class="gift-area">
+
+
+        <div
+            class="gift"
+            id="gift"
+        >
+
+
+            <div class="gift-inside"></div>
+
+
+            <div
+                class="letter-inside"
+                id="insideLetter"
+            >
+
+                <span>
+                    Em có một lá thư...
+                </span>
+
+            </div>
+
+
+            <div class="gift-box"></div>
+
+
+            <div class="gift-lid"></div>
+
+
+            <div class="bow">
+
+                <div class="bow-center"></div>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="hint"
+            id="hint"
+        >
+            Chạm vào để nhận món quà ✦
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<div
+    class="letter-overlay"
+    id="letterOverlay"
+>
+
+
+    <div class="letter-paper">
+
+
+        <span
+            class="close-btn"
+            id="closeLetterBtn"
+            title="Đóng thư"
+        >
+            &times;
+        </span>
+
+
+        <h1>
+            Một lá thư dành cho em
+        </h1>
+
+
+        <div
+            class="letter-content"
+            id="letterContent"
+        ></div>
+
+
+        <div
+            class="signature"
+            id="signature"
+        >
+            Anh-<br>
+				
+			Người đã đem lòng thương em từ rất rất lâu
+        </div>
+
+
+        <!--  -->
+
+        <div
+            class="read-done"
+            id="readDone"
+        >
+
+
+            <div class="read-done-text">
+                Nếu em đã đọc đến đây...
+            </div>
+
+
+            <button
+                class="read-button"
+                id="readButton"
+            >
+                Đọc xong ✦
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<div
+    class="choice-overlay"
+    id="choiceOverlay"
+>
+
+
+    <div class="choice-box">
+
+
+        <!--  -->
+
+        <span
+            class="close-btn"
+            id="closeChoiceBtn"
+            title="Chọn lại"
+        >
+            &times;
+        </span>
+
+
+        <h2>
+            Cảm ơn em đã đọc đến cuối.
+        </h2>
+
+
+        <p>
+
+            Anh không biết em sẽ nghĩ gì sau khi đọc lá thư này,
+            nhưng dù thế nào cũng cảm ơn em vì đã dành thời gian đọc nó.
+
+        </p>
+
+
+        <!-- =================================================
+             
+        ================================================= -->
+
+        <div
+            class="choice-buttons"
+            id="choiceButtons"
+        >
+
+
+            <button
+                class="thank-btn"
+                id="thankBtn"
+            >
+                Cảm ơn anh(ấn vào có khi người ta biết á)
+            </button>
+
+
+            <button
+                class="message-btn"
+                id="messageBtn"
+            >
+                Gửi tin nhắn gì đó cho anh
+            </button>
+
+
+        </div>
+
+
+        <!-- =================================================
+             
+        ================================================= -->
+
+        <div
+            class="thank-you"
+            id="thankYou"
+        >
+
+
+            <div class="thank-text">
+
+                Như vậy là anh đã siêu siêu vui rồi<br>
+
+            Chúc em luôn có những ngày thật dịu dàng yên bình và tươi đẹp.<br>
+			
+			Em mãi mãi là niềm hạnh phúc đặc biệt nhất đời anh, mãi sau này vẫn thế.
+
+            </div>
+
+
+            <button
+                class="anonymous-btn"
+                id="anonymousBtn"
+            >
+                Lời nhắn nhủ bí mật gửi cho anh
+            </button>
+
+
+        </div>
+
+
+        <!-- =================================================
+             
+        ================================================= -->
+
+        <div
+            class="anonymous-form"
+            id="anonymousForm"
+        >
+
+
+            <div class="anonymous-title">
+                Em muốn nhắn gì đó cho anh? 
+            </div>
+
+
+            <div class="anonymous-note">
+
+                Em có thể để lại bất cứ điều gì em muốn nói.<br>
+				Đây là tin nhắn bí mật.
+
+            </div>
+
+
+            <textarea
+                id="anonymousMessage"
+                maxlength="5000"
+                placeholder="Viết điều em muốn gửi cho anh..."
+            ></textarea>
+
+
+            <div
+                class="anonymous-actions"
+            >
+
+
+                <button
+                    class="anonymous-send"
+                    id="anonymousSend"
+                >
+                    Gửi cho anh ✦
+                </button>
+
+
+                <button
+                    class="anonymous-cancel"
+                    id="anonymousCancel"
+                >
+                    Quay lại
+                </button>
+
+
+            </div>
+
+
+            <div
+                class="anonymous-status"
+                id="anonymousStatus"
+            ></div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     
+===================================================== -->
+
+<script type="module">
+
+
+/* =====================================================
+   
+===================================================== */
+
+import {
+    initializeApp
+} from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    doc,
+    setDoc,
+    serverTimestamp
+} from
+    "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+/* =====================================================
+   
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyBodQal8TC-NzlOmFzItWDqluG9HViLmRQ",
+
+    authDomain:
+        "my-love-edhtrang.firebaseapp.com",
+
+    projectId:
+        "my-love-edhtrang",
+
+    storageBucket:
+        "my-love-edhtrang.firebasestorage.app",
+
+    messagingSenderId:
+        "769468578791",
+
+    appId:
+        "1:769468578791:web:4269ea951dbb0f5510db42"
+
+};
+const bgMusic = document.getElementById("bgMusic");
+
+bgMusic.volume = 0.35;
+
+
+/* =====================================================
+   
+===================================================== */
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const db =
+    getFirestore(app);
+
+
+/* =====================================================
+   
+===================================================== */
+
+const letterText = [
+    "Gửi em.",
+
+    "Vậy là thêm một mùa trung thu nữa lại đến nhở.",
+
+    "Chả mấy chốc nữa là đông sang rồi xuân lại đến rồi lại kết thúc một năm em nhở.",
+
+    "Anh viết lá thư này cho em để chúc em một đêm trung thu tuyệt vời ấm áp bên gia đình nè.",
+	
+	"Chúc em đạt được nhiều nhiều thành tích tốt trong học tập, lẫn cả công việc của em.",
+	
+	"Chúc cho em luôn vui vẻ trong cuộc sống, những điều tốt đẹp sẽ ở bên và những điều không tốt sẽ không xuất hiện.",
+
+    "Chúc em luôn khỏe mạnh, luôn luôn xinh đẹp như ánh trăng đêm nay vậy, ngày càng giỏi giang, không có chuyện gì muộn phiền.",
+	
+	"Và anh cũng muốn bày tỏ cả cảm xúc của mình trong đó nữa, từ đầu năm đến nay điều khiến anh hạnh phúc nhất có lẽ là cái vô tính thả nhầm like vào cuộc trò chuyện của mình.",
+	
+	"Và sau đó nữa là anh đã mạnh dạn quyết định đi ra Hà Nội để gặp em, cái ngày mà còn bé xíu  chưa biết yêu là gì anh còn mạnh mõm bảo là gặp được cơ, thế mà vèo cái đã 8 năm.(* haaha lúc đó khọm này nó thoại cái gì vậy nè, không biết lấy đâu tự tin ạ*)",
+
+    "Có thể sau khi đọc xong, mọi thứ giữa chúng ta vẫn sẽ như trước.",
+
+    "Và anh cũng tôn trọng điều đó.",
+
+    "Nhưng mà sau tất cả thì anh biết rằng anh có lý do để mình làm mọi thứ, không chỉ vì bản thân anh, anh còn muốn anh và ai đó đang đọc cái này, sẽ có được chúng ta ở sau này. (heeh sến ẹ).",
+
+    "Cảm ơn em vì đã xuất hiện trong cuộc sống của anh.",
+
+    "Cảm ơn tất cả từ trước đến nay, anh nghĩ cuộc đời mình cũng là quá may mắn roài .",
+
+    "Sau cùng là anh muốn nói, anh yêu em nhiều lém, và anh sẽ kệ, anh không nghe ai nói gì cả, cuộc đời anh , người anh yêu quý anh anh sẽ tự cố gắng làm điều gì đó (*nghe hơi ngu ngốc nhở*).",
+
+    "Cảm ơn em vì đã đọc đến đây, chúc em trung thu vui vẻ cái nữa nhé. See yah. I love u，hope to see you soon.<br>",
+	
+	"月が綺麗ですね - Tsuki ga kirei.",
+
+];
+
+
+/* =====================================================
+   
+===================================================== */
+
+const MESSENGER_LINK =
+    "https://m.me/DuongQuocKhoa1103";
+
+
+/* =====================================================
+   
+===================================================== */
+
+const gift =
+    document.getElementById(
+        "gift"
+    );
+
+
+const insideLetter =
+    document.getElementById(
+        "insideLetter"
+    );
+
+
+const hint =
+    document.getElementById(
+        "hint"
+    );
+
+
+const overlay =
+    document.getElementById(
+        "letterOverlay"
+    );
+
+
+const content =
+    document.getElementById(
+        "letterContent"
+    );
+
+
+const signature =
+    document.getElementById(
+        "signature"
+    );
+
+
+const readDone =
+    document.getElementById(
+        "readDone"
+    );
+
+
+const readButton =
+    document.getElementById(
+        "readButton"
+    );
+
+
+const choiceOverlay =
+    document.getElementById(
+        "choiceOverlay"
+    );
+
+
+const thankBtn =
+    document.getElementById(
+        "thankBtn"
+    );
+
+
+const messageBtn =
+    document.getElementById(
+        "messageBtn"
+    );
+
+
+const choiceButtons =
+    document.getElementById(
+        "choiceButtons"
+    );
+
+
+const thankYou =
+    document.getElementById(
+        "thankYou"
+    );
+
+
+const closeLetterBtn =
+    document.getElementById(
+        "closeLetterBtn"
+    );
+
+
+const closeChoiceBtn =
+    document.getElementById(
+        "closeChoiceBtn"
+    );
+
+
+/* =====================================================
+   
+===================================================== */
+
+const anonymousBtn =
+    document.getElementById(
+        "anonymousBtn"
+    );
+
+
+const anonymousForm =
+    document.getElementById(
+        "anonymousForm"
+    );
+
+
+const anonymousMessage =
+    document.getElementById(
+        "anonymousMessage"
+    );
+
+
+const anonymousSend =
+    document.getElementById(
+        "anonymousSend"
+    );
+
+
+const anonymousCancel =
+    document.getElementById(
+        "anonymousCancel"
+    );
+
+
+const anonymousStatus =
+    document.getElementById(
+        "anonymousStatus"
+    );
+
+
+/* =====================================================
+   
+===================================================== */
+
+letterText.forEach(
+    text => {
+
+        const p =
+            document.createElement(
+                "p"
+            );
+
+
+        p.textContent =
+            text;
+
+
+        content.appendChild(
+            p
+        );
+
+    }
+);
+
+
+/* =====================================================
+  
+===================================================== */
+
+gift.addEventListener("click", async function() {
+
+    if (!gift.classList.contains("opened")) {
+
+        gift.classList.add("opened");
+
+        hint.textContent =
+            "Một lá thư dành cho em ✦";
+    }
+
+
+    // Bắt đầu phát nhạc
+    try {
+
+        await bgMusic.play();
+
+    } catch (error) {
+
+        console.log(
+            "Không thể phát nhạc:",
+            error
+        );
+
+    }
+
+});
+
+
+/* =====================================================
+   
+===================================================== */
+
+insideLetter.addEventListener(
+    "click",
+    function(e){
+
+        e.stopPropagation();
+
+        openLetter();
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+function openLetter(){
+
+    overlay.classList.add(
+        "show"
+    );
+
+
+    const paragraphs =
+        document.querySelectorAll(
+            ".letter-content p"
+        );
+
+
+    paragraphs.forEach(
+        (p,index) => {
+
+            setTimeout(
+                () => {
+
+                    p.classList.add(
+                        "show"
+                    );
+
+                },
+
+                index * 850
+            );
+
+        }
+    );
+
+
+    const lastParagraphTime =
+        (paragraphs.length - 1) * 850;
+
+
+    setTimeout(
+        () => {
+
+            signature.classList.add(
+                "show"
+            );
+
+        },
+
+        lastParagraphTime + 1800
+    );
+
+
+    setTimeout(
+        () => {
+
+            readDone.classList.add(
+                "show"
+            );
+
+        },
+
+        lastParagraphTime + 2800
+    );
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+closeLetterBtn.addEventListener(
+    "click",
+    function(){
+
+        overlay.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+readButton.addEventListener(
+    "click",
+    async function(){
+
+        readDone.classList.remove(
+            "show"
+        );
+
+
+        /* ================================================
+           
+        ================================================ */
+
+        try {
+
+            await setDoc(
+                doc(
+                    db,
+                    "letter_status",
+                    "main"
+                ),
+                {
+
+                    readConfirmed:
+                        true,
+
+                    readAt:
+                        serverTimestamp(),
+
+                    updatedAt:
+                        serverTimestamp()
+
+                },
+                {
+
+                    merge:
+                        true
+
+                }
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Không ghi được trạng thái đọc:",
+                error
+            );
+
+        }
+
+
+        setTimeout(
+            () => {
+
+                choiceOverlay.classList.add(
+                    "show"
+                );
+
+            },
+
+            500
+        );
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+thankBtn.addEventListener(
+    "click",
+    function(){
+
+        /*
+         * Ẩn 2 nút ban đầu
+         */
+
+        choiceButtons.style.display =
+            "none";
+
+
+        /*
+         * 
+         * 
+         */
+
+        thankYou.classList.add(
+            "show"
+        );
+
+
+        /*
+         * 
+         */
+
+        anonymousForm.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+messageBtn.addEventListener(
+    "click",
+    function(){
+
+        window.open(
+            MESSENGER_LINK,
+            "_blank"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+anonymousBtn.addEventListener(
+    "click",
+    function(){
+
+        /*
+         * 
+         */
+
+        thankYou.classList.remove(
+            "show"
+        );
+
+
+        /*
+         * 
+         */
+
+        anonymousForm.classList.add(
+            "show"
+        );
+
+
+        /*
+         * 
+         */
+
+        setTimeout(
+            () => {
+
+                anonymousMessage.focus();
+
+            },
+
+            250
+        );
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+anonymousCancel.addEventListener(
+    "click",
+    function(){
+
+        anonymousForm.classList.remove(
+            "show"
+        );
+
+
+        thankYou.classList.add(
+            "show"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+anonymousSend.addEventListener(
+    "click",
+    async function(){
+
+        const message =
+            anonymousMessage.value.trim();
+
+
+        /* ================================================
+           
+        ================================================ */
+
+        if (
+            !message
+        ){
+
+            anonymousStatus.textContent =
+                "Em viết vài dòng trước khi gửi nhé<br>Đây là tin nhắn ẩn danh có khi anh sẽ nhận được.";
+
+
+            anonymousStatus.classList.add(
+                "show"
+            );
+
+
+            return;
+
+        }
+
+
+        /* ================================================
+           
+        ================================================ */
+
+        if (
+            message.length > 5000
+        ){
+
+            anonymousStatus.textContent =
+                "Tin nhắn tối đa 5000 ký tự nhé.";
+
+
+            anonymousStatus.classList.add(
+                "show"
+            );
+
+
+            return;
+
+        }
+
+
+        /* ================================================
+          
+        ================================================ */
+
+        try {
+
+            anonymousSend.disabled =
+                true;
+
+
+            anonymousSend.textContent =
+                "Đang gửi...";
+
+
+            await addDoc(
+                collection(
+                    db,
+                    "anonymous_messages"
+                ),
+                {
+
+                    message:
+                        message,
+
+                    sentAt:
+                        serverTimestamp(),
+
+                    type:
+                        "anonymous"
+
+                }
+            );
+
+
+            /* ================================================
+               
+            ================================================ */
+
+            anonymousStatus.textContent =
+                "Tin nhắn đã được gửi thành công đến tâm trí anh rồi ạ.";
+
+
+            anonymousStatus.classList.add(
+                "show"
+            );
+
+
+            anonymousMessage.value =
+                "";
+
+
+            anonymousSend.textContent =
+                "Đã gửi ✦";
+
+
+            setTimeout(
+                () => {
+
+                    anonymousForm.classList.remove(
+                        "show"
+                    );
+
+
+                    thankYou.innerHTML = `
+
+                        <div class="thank-text">
+
+                            Anh đã nhận được lời nhắn của em. <br>
+
+                            Chúc em luôn có những ngày thật dịu dàng yên bình và tươi đẹp<br>
+							
+							Hôm nay, ngài mai, và những ngày mai kia nữa mãi về sau.
+
+                        </div>
+
+                    `;
+
+
+                    thankYou.classList.add(
+                        "show"
+                    );
+
+
+                    anonymousSend.disabled =
+                        false;
+
+
+                    anonymousSend.textContent =
+                        "Gửi cho anh ✦";
+
+
+                    anonymousStatus.classList.remove(
+                        "show"
+                    );
+
+
+                    anonymousStatus.textContent =
+                        "";
+
+                },
+
+                5000
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Lỗi gửi tin nhắn:",
+                error
+            );
+
+
+            anonymousStatus.textContent =
+                "Có lỗi xảy ra khi gửi. Em thử lại nhé.";
+
+
+            anonymousStatus.classList.add(
+                "show"
+            );
+
+
+            anonymousSend.disabled =
+                false;
+
+
+            anonymousSend.textContent =
+                "Gửi cho anh ✦";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   
+===================================================== */
+
+function resetChoiceBox(){
+
+    /*
+     * Hiện lại 2 nút
+     */
+
+    choiceButtons.style.display =
+        "flex";
+
+
+    /*
+     * 
+     */
+
+    thankYou.classList.remove(
+        "show"
+    );
+
+
+    /*
+     * Ẩn form
+     */
+
+    anonymousForm.classList.remove(
+        "show"
+    );
+
+
+    /*
+     * Reset trạng thái
+     */
+
+    anonymousStatus.textContent =
+        "";
+
+    anonymousStatus.classList.remove(
+        "show"
+    );
+
+
+    anonymousSend.disabled =
+        false;
+
+
+    anonymousSend.textContent =
+        "Gửi cho anh ✦";
+
+
+    /*
+     * 
+     */
+
+    thankYou.innerHTML = `
+
+        <div class="thank-text">
+
+            Như vậy là anh đã siêu siêu vui rồi<br>
+
+            Chúc em luôn có những ngày thật dịu dàng yên bình và tươi đẹp.<br>
+			
+			Em mãi mãi là niềm hạnh phúc đặc biệt nhất đời anh, mãi sau này vẫn thế.
+
+        </div>
+
+        <button
+            class="anonymous-btn"
+            id="anonymousBtn"
+        >
+            Gửi tin nhắn bí mật cho anh
+        </button>
+
+    `;
+
+}
+
+
+/* =====================================================
+   
+===================================================== */
+
+closeChoiceBtn.addEventListener(
+    "click",
+    function(){
+
+        choiceOverlay.classList.remove(
+            "show"
+        );
+
+
+        setTimeout(
+            () => {
+
+                readDone.classList.add(
+                    "show"
+                );
+
+
+                resetChoiceBox();
+
+
+                /*
+                 * Vì resetChoiceBox tạo lại
+                 * anonymousBtn nên phải gắn
+                 * event lại cho nút mới.
+                 */
+
+                const newAnonymousBtn =
+                    document.getElementById(
+                        "anonymousBtn"
+                    );
+					
+
+
+                newAnonymousBtn.addEventListener(
+                    "click",
+                    function(){
+
+                        thankYou.classList.remove(
+                            "show"
+                        );
+
+
+                        anonymousForm.classList.add(
+                            "show"
+                        );
+
+
+                        setTimeout(
+                            () => {
+
+                                anonymousMessage.focus();
+
+                            },
+
+                            250
+                        );
+
+                    }
+                );
+
+            },
+
+            600
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
